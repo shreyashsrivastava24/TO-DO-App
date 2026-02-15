@@ -82,13 +82,14 @@ function App() {
 
   const totalTasks = todos.length
   const leftTasks = todos.filter(t => !t.isCompleted).length
+  const completedTasks = todos.filter(t => !!t.isCompleted).length
 
 
   return (
     <>
       <Navbar />
       <div className="mx-3 md:container md:mx-auto my-5 rounded-xl p-5 bg-violet-100 dark:bg-slate-800 text-black dark:text-white min-h-[80vh] md:w-[35%]">
-        <h1 className='font-bold text-center text-3xl'>iTask - Manage your todos at one place</h1>
+        <h1 className='font-bold text-center text-3xl'>iTask - Manage your Tasks at one place</h1>
         <div className="addTodo my-5 flex flex-col gap-4">
           <h2 className='text-2xl font-bold'>Add a Todo</h2>
           <div className="flex">
@@ -104,6 +105,7 @@ function App() {
         <h2 className='text-2xl font-bold'>Your Todos</h2>
         <div className='flex gap-3 items-center my-2'>
           <div className='px-3 py-1 rounded-full bg-gray-200 text-sm text-gray-800 dark:bg-slate-700 dark:text-gray-100'>Total: {totalTasks}</div>
+          <div className='px-3 py-1 rounded-full bg-yellow-200 text-sm text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'>Completed: {completedTasks}</div>
           <div className='px-3 py-1 rounded-full bg-emerald-200 text-sm text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200'>Left: {leftTasks}</div>
         </div>
         <div className="todos">
