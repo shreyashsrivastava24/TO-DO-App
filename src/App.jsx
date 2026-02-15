@@ -77,22 +77,22 @@ function App() {
   
 
   return (
-    < >
-    <Navbar/> 
-       <div className="mx-3 md:container md:mx-auto my-5 rounded-xl p-5 bg-violet-100 min-h-[80vh] md:w-[35%]">
+     <>
+     <Navbar/> 
+       <div className="mx-3 md:container md:mx-auto my-5 rounded-xl p-5 bg-violet-100 dark:bg-slate-800 text-black dark:text-white min-h-[80vh] md:w-[35%]">
         <h1 className='font-bold text-center text-3xl'>iTask - Manage your todos at one place</h1>
          <div className="addTodo my-5 flex flex-col gap-4">
           <h2 className='text-2xl font-bold'>Add a Todo</h2>
           <div className="flex">
 
-          <input  onChange={handleChange} value={todo} type="text" className='w-full rounded-full px-5 py-1' />
+          <input  onChange={handleChange} value={todo} type="text" className='w-full rounded-full px-5 py-1 bg-white text-black placeholder-gray-500 dark:bg-slate-700 dark:text-white dark:placeholder-gray-300' />
           <button onClick={handleAdd} disabled={todo.length<=3} className='bg-violet-800 mx-2 rounded-2xl hover:bg-violet-950 disabled:bg-violet-500 p-4 py-2 text-sm font-bold text-white'>Save</button>
           <button onClick={clearAll} disabled={todos.length===0} className='bg-red-600 mx-2 rounded-2xl hover:bg-red-800 disabled:bg-red-300 p-4 py-2 text-sm font-bold text-white'>Clear All</button>
           </div>
          </div>
          <input className='my-4' id='show' onChange={toggleFinished} type="checkbox" checked={showFinished} /> 
          <label className='mx-2' htmlFor="show">Show Finished</label> 
-         <div className='h-[1px] bg-black opacity-15 w-[90%] mx-auto my-2'></div>
+         <div className='h-[1px] bg-black opacity-15 dark:bg-white dark:opacity-20 w-[90%] mx-auto my-2'></div>
          <h2 className='text-2xl font-bold'>Your Todos</h2>
          <div className="todos">
           {todos.length ===0 && <div className='m-5'>No Todos to display</div> }

@@ -3,7 +3,18 @@
 @tailwind utilities;
 
 
+:root{
+    --app-bg: rgb(184, 181, 236);
+    --app-text: #000000;
+}
+
+.dark{
+    --app-bg: #0f172a; /* slate-900 */
+    --app-text: #ffffff;
+}
+
 body{
-    --tw-bg-opacity: 1;
-    background-color: rgb(191, 181, 236)
+    background-color: var(--app-bg);
+    color: var(--app-text);
+    transition: background-color .2s ease, color .2s ease;
 }
